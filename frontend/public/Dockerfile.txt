@@ -1,2 +1,6 @@
-FROM nginx
-copy . /usr/share/nginx/html/
+FROM node:16
+WORKDIR /app
+copy . .
+RUN npm install 
+EXPOSE 80
+CMD ["node" , "index.js"]
